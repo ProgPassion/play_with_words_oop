@@ -34,7 +34,7 @@
             if(!is_array($bind)) {
                 $bind = array($bind);
             }
-            echo $sql;
+            
             $stmt = $this->connection->prepare($sql);
             $stmt->execute($bind);
             return $stmt;
