@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    require_once '../libs/session.handler.php';
+
+    if(Session::exists("user")) {
+        header('Location: view/dashboard.php');
+    }
+?>
 <!DOCTYPE html>
 <html> 
     <head>
@@ -5,61 +13,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-        <style>
-            html, body {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                font-family: 'Lato', sans-serif;
-            }
-            .wrapper {
-                display: flex;
-                height: 100%;
-            }
-            .landingWallpaper {
-                background-image: url("../assets/images/landing_img.jpg");
-                background-size: cover;
-                width: 50%;
-                height: 100%;
-            }
-            .login {
-                background-color: #d1d1ca;
-                width: 50%;
-                height: 100%;
-            }
-            table {
-                background-color: #424242;
-                color: #eee;
-                width: 100%;
-                padding-top: 100px;
-                padding-bottom: 80px;
-            }
-            td {
-                padding: 3px 10px;
-                width: 50%;
-            }
-            input {
-                font-size: 18px;
-            }
-            button {
-                width: 40%;
-                font-size: 20px;
-                padding: 2px;
-                font-weight: 900;
-                cursor: pointer;
-            }
-            .main-text {
-                text-align: center;
-                font-size: 3.5rem;
-                color: #7a6d6d;
-            }
-            .main-article {
-                padding: 0 35px;
-            }
-            .main-article > p {
-                font-size: 18px;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="../assets/css/style.login.css">
     </head>
     <body>
 
@@ -79,6 +33,11 @@
                             <td style="text-align: right;"><label for="password">Password: </label></td>
                             <td><input id="password" type="password" name="password"></td>
                         </tr>
+                            <td colspan="2">
+                                <?php if(Session::exists("loginError")): ?>
+                                    <h3 class="error-login-msg"><?php echo Session::flash("loginError") ?></h3>
+                                <?php endif ?>
+                            </td>
                         <tr>
                             <td colspan="2" style="text-align: center; padding-top:20px;">
                                 <button>Login</button>

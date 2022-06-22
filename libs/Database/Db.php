@@ -34,7 +34,7 @@
             if(!is_array($bind)) {
                 $bind = array($bind);
             }
-
+            echo $sql;
             $stmt = $this->connection->prepare($sql);
             $stmt->execute($bind);
             return $stmt;
@@ -55,8 +55,8 @@
             return $stmt->fetch();
         }
 
-        public function selectOne($tableColumns = [], $table, $where = []) {
-            $stmt = $this->_select($tableColumns, $table, $where);
+        public function selectOne($tableColumns, $table, $where = []) {
+            $stmt = $this->_select([$tableColumns], $table, $where);
             return $stmt->fetchColumn(0);
         }
 

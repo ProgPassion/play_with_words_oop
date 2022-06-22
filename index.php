@@ -1,10 +1,11 @@
 <?php
 
     require_once 'libs/Database/Db.php';
+    require_once 'libs/session.handler.php';
 
     session_start();
 
-    if(!empty($_SESSION["user"])) {
+    if(Session::exists("name")) {
         header('Location: view/dashboard.php');
     }
     else {
