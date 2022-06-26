@@ -58,3 +58,16 @@ button {
     color: #eb8e53; 
     padding: 5px 0px;
 }
+.sign-in {
+    margin: 70px 0;
+    text-align: center;
+}
+.sign-in > a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #7a6d6d;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid;
+    padding: 10px;
+}

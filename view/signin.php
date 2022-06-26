@@ -1,6 +1,3 @@
-<?php
-    require_once '../libs/session.handler.php';
-?>
 <!DOCTYPE html>
 <html> 
     <head>
@@ -39,18 +36,13 @@
                             </td>
                         </tr>
                     </table>
-                    <div style="position: relative;">
-                        <div class="main-article">
-                            <h1 class="main-text">Play with words</h1>
-                            <p>
-                                Is a WebApp that helps you to learn easier and in funny approach way your favourite languages.
-                                It will be your own personalized dictionary! If you dont have a login account you are invited to sign up
-                                and you will discover how satisfying is the learning process.
-                            </p>
-                        </div>
-                        <div class="sign-in">
-                            <a href="signin.php">Sign In</a>
-                        </div>
+                    <div class="main-article">
+                        <h1 class="main-text">Play with words</h1>
+                        <p>
+                            Is a WebApp that helps you to learn easier and in funny approach way your favourite languages.
+                            It will be your own personalized dictionary! If you dont have a login account you are invited to sign up
+                            and you will discover how satisfying is the learning process.
+                        </p>
                     </div>
                 </form>
             </div>

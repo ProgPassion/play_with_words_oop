@@ -1,4 +1,5 @@
 <?php
+    session_start();
     class Session {
 
         public static function exists($name) {
@@ -23,9 +24,6 @@
                 $session = self::get($name);
                 self::delete($name);
                 return $session;
-            }
-            else {
-                self::set($name, $string);
             }
             return '';
         }
