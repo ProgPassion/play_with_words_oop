@@ -48,7 +48,7 @@
                                 and you will discover how satisfying is the learning process.
                             </p>
                         </div>
-                        <div class="sign-in">
+                        <div class="sign-in-link">
                             <a href="signin.php">Sign In</a>
                         </div>
                     </div>

@@ -1,3 +1,6 @@
+<?php
+    require_once '../libs/session.handler.php';
+?>
 <!DOCTYPE html>
 <html> 
     <head>
@@ -8,14 +11,13 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/style.login.css">
     </head>
     <body>
-
         <div class="wrapper">
             <div class="landingWallpaper"></div>
-            <div class="login">
-                <form action="../controller/login.controller.php" method="POST">
+            <div class="signin">
+                <form action="../controller/signin.controller.php" method="POST">
                     <table>
                         <tr>
-                            <td colspan="2"><h1 style="text-align: center;">Login</h1></td>
+                            <td colspan="2"><h1 style="text-align: center;">Sign in</h1></td>
                         </tr>
                         <tr>
                             <td style="text-align: right;"><label for="username">Username: </label></td>
@@ -25,14 +27,20 @@
                             <td style="text-align: right;"><label for="password">Password: </label></td>
                             <td><input id="password" type="password" name="password"></td>
                         </tr>
-                            <td colspan="2">
-                                <?php if(Session::exists("loginError")): ?>
-                                    <h3 class="error-login-msg"><?php echo Session::flash("loginError") ?></h3>
-                                <?php endif ?>
-                            </td>
+                        <tr>
+                            <td style="text-align: right;"><label for="repeatPassword">Repeat Password: </label></td>
+                            <td><input id="repeatPassword" type="password" name="repeatPassword"></td>
+                        </tr>
                         <tr>
                             <td colspan="2" style="text-align: center; padding-top:20px;">
-                                <button>Login</button>
+                                <button>Sign in</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <?php if(Session::exists("signinError")): ?>
+                                    <h3 class="error-signin-msg"><?php echo Session::flash("signinError") ?></h3>
+                                <?php endif ?>
                             </td>
                         </tr>
                     </table>
@@ -43,6 +51,9 @@
                             It will be your own personalized dictionary! If you dont have a login account you are invited to sign up
                             and you will discover how satisfying is the learning process.
                         </p>
+                    </div>
+                    <div class="login-link">
+                        <a href="login.php">Login</a>
                     </div>
                 </form>
             </div>

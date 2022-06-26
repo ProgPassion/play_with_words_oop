@@ -14,7 +14,7 @@ html, body {
     width: 50%;
     height: 100%;
 }
-.login {
+.login, .signin{
     background-color: #d1d1ca;
     width: 50%;
     height: 100%;
@@ -58,11 +58,11 @@ button {
     color: #eb8e53; 
     padding: 5px 0px;
 }
-.sign-in {
+.sign-in-link, .login-link {
     margin: 70px 0;
     text-align: center;
 }
-.sign-in > a {
+.sign-in-link > a, .login-link > a {
     font-size: 30px;
     font-weight: bold;
     color: #7a6d6d;
